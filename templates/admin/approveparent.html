@@ -1,0 +1,84 @@
+
+
+{% extends 'admin/base.html' %}
+{% load static %}
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+<div class="banner_area1 clearfix">
+    <!-- <div class="slider_overlay_area slider_height"> -->
+        <div class="container slider_height">
+            <!-- <div class="row slider_height"> -->
+                <!-- <div class="col-md-5 offset-md-7 slider_height"> -->
+                    <div class="banner-delivery-form">
+                        <div class="form-header text-center">
+                            <h2>Verification of Parents</h2>
+                        </div>
+                 
+		
+			<div class="container">
+								<!-- </div>
+								</div>
+								</div> -->
+				          </div>
+								</div>
+							</div>
+							<div class="row no-gutters">
+								<div class="col-md-12">
+									<div class="contact-wrap w-100 p-md-5 p-4">
+										<h3 class="mb-4">View Parents</h3>
+
+		<div class="card">
+			<div class="card-content collapse show">
+				<div class="table-responsive">
+					<table class="table table-bordered mb-0">
+						<thead>
+							<tr>
+                                <th>Name Of the Parent </th>
+								<th>Email</th>
+								<th>Contact Number</th>
+                                <th>Location</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for i in approveparent %} 
+								<!-- <td> <img style="height: 70px; width: 80px;" src="/media/{{i.image}}"><br>{{i.name}} </td>			 			 -->
+								<td>{{i.fname}} {{i.lname}}</td>
+                                <td>{{i.email}}</td>
+                                <td>{{i.phone}}</td>
+                                <td>{{i.location}}</td>
+                                <!-- <td><a style="margin-left: 20px;" href="editproduct?id={{i.id}}"><button class="btn-success">Edit</button></a> -->
+                                   <td><a style="margin-left: 20px;" href="ApproveParent?id={{i.user_id}}"><button class="btn btn-success">Approve</button></a>
+									<a href="RemoveParent?id={{ i.id}}"><button class=" btn btn-danger">Reject</button></a></td>
+
+                                </td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+										
+									</div>
+								</div>
+								
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+
+    
+	{% endblock %}
+
+  

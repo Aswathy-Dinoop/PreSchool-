@@ -1,0 +1,63 @@
+
+{% extends 'parent/base.html' %}
+{% load static %}
+{% block content %}
+
+{% if message %}
+<script>
+    alert("{{message}}")
+</script>
+{% endif %}
+
+
+ <!-- Team Start -->
+ <div class="container-fluid pt-5">
+    <div class="container">
+      <div class="text-center pb-2">
+        <!-- <p class="section-title px-5">
+          <span class="px-2">Childrens Profile</span>
+        </p> -->
+        <h1 class="mb-4">Kids Profile</h1>
+      </div>
+      <div class="row">
+        {% for i in kidpro %}
+        <div class="col-md-6 col-lg-3 text-center team mb-5">
+          <div
+            class="position-relative overflow-hidden mb-4"
+            style="border-radius: 100%"
+          >
+            <img style="height: 300px; width: 300px;" class="img-fluid w-100" src="{{i.image.url}}" alt="" />
+            <div
+              class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute"
+            >
+              <!-- <a
+                class="btn btn-outline-light text-center mr-2 px-0"
+                style="width: 38px; height: 38px"
+                href="#"
+                ><i class="fab fa-twitter"></i
+              ></a> -->
+              <!-- <a
+                class="btn btn-outline-light text-center mr-2 px-0"
+                style="width: 38px; height: 38px"
+                href="#"
+                ><i class="fab fa-facebook-f"></i
+              ></a> -->
+              <!-- <a
+                class="btn btn-outline-light text-center px-0"
+                style="width: 38px; height: 38px"
+                href="#"
+                ><i class="fab fa-linkedin-in"></i
+              ></a> -->
+            </div>
+          </div>
+          <h4>{{i.name}}</h4>
+          <i><p><a href="{% url 'edit_kids' i.id %}" class="d-inline-flex align-items-center block-service-1-more"><span>View Profile</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+          </i>
+        </div>
+        {% endfor %}
+        
+      </div>
+    </div>
+  </div>
+  <!-- Team End -->
+  {% endblock %}

@@ -1,0 +1,89 @@
+
+
+
+{% extends 'parent/base.html' %}
+{% load static %}
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+<div class="banner_area1 clearfix">
+    <!-- <div class="slider_overlay_area slider_height"> -->
+        <div class="container slider_height">
+            <!-- <div class="row slider_height"> -->
+                <!-- <div class="col-md-5 offset-md-7 slider_height"> -->
+                    <div class="banner-delivery-form">
+                        <div class="form-header text-center">
+                            <h2>My Complaint Status</h2>
+                        </div>
+                 
+		
+			<div class="container">
+								<!-- </div>
+								</div>
+								</div> -->
+				          </div>
+								</div>
+							</div>
+							<div class="row no-gutters">
+								<div class="col-md-12">
+									<div class="contact-wrap w-100 p-md-5 p-4">
+										<h3 class="mb-4">View Complaint</h3>
+
+		<div class="card">
+			<div class="card-content collapse show">
+				<div class="table-responsive">
+					<table class="table table-bordered mb-0">
+						<thead>
+							<tr>
+                                <th>Name Of the Parent </th>
+								<th>Child</th>
+								<th>Faculty</th>
+                                <th>Complaint</th>
+								<th>Reply</th>
+                                <!-- <th>Complaint</th> -->
+								<!-- <th>Reply</th> -->
+							</tr>
+						</thead>
+						<tbody>
+							{% for i in view_complaint %} 
+								<!-- <td> <img style="height: 70px; width: 80px;" src="/media/{{i.image}}"><br>{{i.name}} </td>			 			 -->
+								<td>{{i.parent.fname}} {{i.parent.lname}}</td>
+                                <td>{{i.child.name}}</td>
+                                <td>{{i.fac.name}}</td>
+                                <td>{{i.complaintmessages}}</td>
+                                <td>{{i.reply}}</td>
+                                <!-- <td>{{i.name}}</td> -->
+                                <!-- <td><a href="KidsProfileDetails?id={{i.id}}"><button class="btn-info">View Child Details</button></a> -->
+                                   <!-- <td><a style="margin-left: 20px;" href="ApproveParent?id={{i.user_id}}"><button class="btn btn-success">Approve</button></a>
+									<a href="RemoveParent?id={{ i.id}}"><button class=" btn btn-danger">Reject</button></a></td> -->
+
+                                </td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+										
+									</div>
+								</div>
+								
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+
+    
+	{% endblock %}
+
+  

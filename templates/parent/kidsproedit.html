@@ -1,0 +1,105 @@
+{% extends 'parent/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+{% if message %}
+<script>
+    alert("{{message}}")
+</script>
+{% endif %}
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary mb-5">
+      <div
+        class="d-flex flex-column align-items-center justify-content-center"
+        style="min-height: 400px"
+      >
+        <h3 class="display-3 font-weight-bold text-white">Child Profile</h3>
+        <div class="d-inline-flex text-white">
+          <p class="m-0"><a class="text-white" href="">Home</a></p>
+          <p class="m-0 px-2">/</p>
+          <p class="m-0">Child Details</p>
+        </div>
+      </div>
+    </div>
+    <!-- Header End -->
+
+<!-- Profile View Start-->
+<div class="container-fluid py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 mb-5 mb-lg-0">
+          <!-- <p class="section-title pr-5">
+            <span class="pr-2">{{view.name}}t</span>
+          </p> -->
+          <h1 class="mb-4">{{kids.name}}</h1>
+          <!-- <p>
+            Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo
+            dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo.
+            Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
+            dolor
+          </p> -->
+          <ul class="list-inline m-0">
+            <li class="py-2">
+              <i class="fa fa-check text-success mr-3"></i>Age :- {{kids.age}}
+            </li>
+            <!-- <li class="py-2">
+              <i class="fa fa-check text-success mr-3"></i>
+            </li> -->
+            <!-- <li class="py-2">
+              <i class="fa fa-check text-success mr-3"></i>Diam dolor diam
+              elitripsum vero.
+            </li> -->
+          </ul>
+          <!-- <a href="" class="btn btn-primary mt-4 py-2 px-4">Book Now</a> -->
+        </div>
+        <div class="col-lg-5">
+          <div class="card border-0">
+            <div class="card-header bg-secondary text-center p-4">
+              <h1 class="text-white m-0">Update Here</h1>
+            </div>
+            <div class="card-body rounded-bottom bg-primary p-5">
+              <form method="post" action="" enctype="multipart/form-data">
+
+                {% csrf_token %}
+                {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
+                <div class="form-group">
+                  {{form.name}}
+                </div>
+                <div class="form-group">
+                      {{form.age}}
+                </div>
+                <div class="form-group">
+                  {{form.gender}}
+            </div>
+                <div class="form-group">
+                  {{form.image}}
+                </div>
+                <div class="form-group">
+                  {{form.birthcertificate}}
+                </div>
+                <div>
+                  <button
+                    class="btn btn-secondary btn-block border-0 py-3"
+                    type="submit"
+                  >
+                Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Profile View End -->
+
+ 
+{% endblock %}

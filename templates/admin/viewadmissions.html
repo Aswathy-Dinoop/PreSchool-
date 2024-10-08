@@ -1,0 +1,84 @@
+
+
+{% extends 'admin/base.html' %}
+{% load static %}
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+<div class="banner_area1 clearfix">
+    <!-- <div class="slider_overlay_area slider_height"> -->
+        <div class="container slider_height">
+            <!-- <div class="row slider_height"> -->
+                <!-- <div class="col-md-5 offset-md-7 slider_height"> -->
+                    <div class="banner-delivery-form">
+                        <div class="form-header text-center">
+                            <h2>View Admission Details</h2>
+                        </div>
+                 
+		
+			<div class="container">
+								<!-- </div>
+								</div>
+								</div> -->
+				          </div>
+								</div>
+							</div>
+							<div class="row no-gutters">
+								<div class="col-md-12">
+									<div class="contact-wrap w-100 p-md-5 p-4">
+										<h3 class="mb-4">View Admission Details</h3>
+
+		<div class="card">
+			<div class="card-content collapse show">
+				<div class="table-responsive">
+					<table class="table table-bordered mb-0">
+						<thead>
+							<tr>
+                                <th>Name Of the Parent </th>
+								<th>Child Info</th>
+								<th>Child Age</th>
+                                <th>Programme</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for i in prog %} 
+								<!-- <td> <img style="height: 70px; width: 80px;" src="/media/{{i.image}}"><br>{{i.name}} </td>			 			 -->
+								<td>{{i.parent.fname}} {{i.parent.lname}}</td>
+                                <td>{{i.child.name}}</td>
+                                <td>{{i.child.age}}</td>
+                                <td>{{i.programme.name}}</td>
+                                <!-- <td><a style="margin-left: 20px;" href="editproduct?id={{i.id}}"><button class="btn-success">Edit</button></a> -->
+                                   <td><a style="margin-left: 20px;" href="Acceptadmission?id={{i.id}}"><button class="btn btn-success">Accept</button></a>
+									<a href="Rejectadmission?id={{i.id}}"><button class=" btn btn-danger">Reject</button></a></td>
+
+                                </td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+										
+									</div>
+								</div>
+								
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+
+    
+	{% endblock %}
+
+  

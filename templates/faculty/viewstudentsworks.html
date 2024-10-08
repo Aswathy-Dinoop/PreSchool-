@@ -1,0 +1,118 @@
+
+
+
+{% extends 'faculty/base.html' %}
+{% load static %}
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+<div class="banner_area1 clearfix">
+    <!-- <div class="slider_overlay_area slider_height"> -->
+        <div class="container slider_height">
+            <!-- <div class="row slider_height"> -->
+                <!-- <div class="col-md-5 offset-md-7 slider_height"> -->
+                    <div class="banner-delivery-form">
+                        <div class="form-header text-center">
+                            <h2>Students Works List</h2>
+                        </div>
+                 
+		
+			<div class="container">
+								<!-- </div>
+								</div>
+								</div> -->
+				          </div>
+								</div>
+							</div>
+							<div class="row no-gutters">
+								<div class="col-md-12">
+									<div class="contact-wrap w-100 p-md-5 p-4">
+										<h3 class="mb-4">View Students Works</h3>
+
+		<div class="card">
+			<div class="card-content collapse show">
+				<div class="table-responsive">
+					<table class="table table-bordered mb-0">
+						<thead>
+							<tr>
+                                <th>Name Of Child</th>
+								<th>Parent Info</th>
+								<th>Child Age</th>
+                                <th>Admission Programme</th>
+								<!-- <th>Share Lessons</th> -->
+                                <th>Activities</th>
+                                <th>Submission Date</th>
+                                <!-- <th>Done</th> -->
+							</tr>
+						</thead>
+						<tbody>
+							{% for i in view_lesson %} 
+								<td> <img style="height: 70px; width: 80px;" src="{{i.admission.child.image.url}}"><br>			 			
+								{{i.admission.child.name}}</td>
+                                <td>{{i.admission.parent.fname}}<br>
+                                    Contact Number :- {{i.admission.parent.phone}}<br>Email :- {{i.admission.parent.email}}</td>
+                                <td>{{i.admission.child.age}}</td>
+                                <td>{{i.admission.programme.name}}</td>
+								<td><a href="{{i.uploadwork}}" class="btn btn-block btn-primary btn-md">View Activities</a></td>	
+                                <!-- <td>{{i.date}}</td> -->
+                                <!-- <form action="" method="post" enctype="multipart/form-data">
+									{% csrf_token %}
+									
+                                    <td>
+                                        <label>Lessons</label>
+                                        <input type="file" name="lesson" id="lesson"> -->
+
+										<!-- <input type="hidden" name="id" value="{{i.user_id}}"> -->
+										<!-- <input type="hidden" name="id2" value="{{i.id}}"></td> -->
+										<!-- <button type="submit">Done</button></td> -->
+                                        <!-- <td>
+                                            <label>Upload Video</label><br>
+                                            <input type="file" name="activity" accept="video/*" onsubmit="validateVideoFile(event)"> -->
+                                            <!-- <input type="hidden" name="id" value="{{i.user_id}}"> -->
+                                            <!-- <input type="hidden" name="id2" value="{{i.id}}"></td>
+
+                                            <td> -->
+                                                <!-- <label>Lessons</label> -->
+                                                <!-- <input type="date" name="subdate"> -->
+        
+                                                <!-- <input type="hidden" name="id" value="{{i.user_id}}"> -->
+                                                <!-- <input type="hidden" name="id2" value="{{i.id}}"></td>
+
+                                            <td><button class="btn-info" type="submit">Submit</button></td>
+                                    </form> -->
+                                    
+								      
+                                <!-- <td><a href="KidsProfileDetails?id={{i.id}}"><button class="btn-info">View Child Details</button></a> -->
+                                   <!-- <td><a style="margin-left: 20px;" href="ApproveParent?id={{i.user_id}}"><button class="btn btn-success">Approve</button></a>
+									<a href="RemoveParent?id={{ i.id}}"><button class=" btn btn-danger">Reject</button></a></td> -->
+
+                                </td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+										
+									</div>
+								</div>
+								
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+
+    
+	{% endblock %}
+
+  

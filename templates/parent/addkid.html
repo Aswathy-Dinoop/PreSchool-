@@ -1,0 +1,160 @@
+{% extends 'parent/base.html' %}
+{% load static %}
+{% block content %}
+
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }}" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
+
+{% if message %}
+<script>
+    alert("{{message}}")
+</script>
+{% endif %}
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary mb-5">
+      <div
+        class="d-flex flex-column align-items-center justify-content-center"
+        style="min-height: 400px"
+      >
+        <h3 class="display-3 font-weight-bold text-white">Add Child Details Here</h3>
+        <div class="d-inline-flex text-white">
+          <p class="m-0"><a class="text-white" href="">Home</a></p>
+          <p class="m-0 px-2">/</p>
+          <p class="m-0">Child Details</p>
+        </div>
+      </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Contact Start -->
+    <div class="container-fluid pt-5">
+      <div class="container">
+        <div class="text-center pb-2">
+          <p class="section-title px-5">
+            <!-- <span class="px-2">Add Child Details</span> -->
+          </p>
+          <!-- {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+          </ul>
+          {% endif %} -->
+          <h1 class="mb-4">Add Child Details</h1>
+        </div>
+        <div class="row">
+          <div class="col-lg-7 mb-5">
+            <div class="contact-form">
+              <div id="success"></div>
+              <form action="" method="post"  enctype="multipart/form-data">
+                {% csrf_token %}
+           
+                <div class="control-group">
+                 {{form.name}}
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="control-group">
+                  {{form.age}}
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="control-group">
+                  {{form.birthcertificate}}
+                  <p class="nb">NB: Please upload the child's birth certificate / AADHAAR Card .</p>
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="control-group">
+                  {{form.image}}
+
+                    <p class="nb">NB: Please upload an image of the child.</p>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="control-group">
+                    <label>Gender of the Child:</label>
+                    {{form.gender}}
+                     <p class="help-block text-danger"></p>
+                   </div>
+                <!-- <div class="control-group">
+                  <textarea
+                    class="form-control"
+                    rows="6"
+                    id="message"
+                    placeholder="Message"
+                    required="required"
+                    data-validation-required-message="Please enter your message"
+                  ></textarea>
+                  <p class="help-block text-danger"></p>
+                </div> -->
+                <div>
+                  <button
+                    class="btn btn-primary py-2 px-4"
+                    type="submit"
+                    id="sendMessageButton" onclick="myFunction()"
+                  >
+                    Add Child Data
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-5 mb-5">
+            <p>
+                The children’s life at school must be linked to their life outside the school. This principle marks a departure from mere bookish learning which often causes a chink between life at school and life outside. To bridge this widening chink we have come up with many student centric learning activities, unique methods and innovative tools.
+            </p>
+            <p>
+                Imagination in learning is like wings to a bird. When children are made to imagine invisible wonders of the world they are going to create visible wonders.
+            </p>
+            <p>
+                Learning doesn’t end with books or even with teachers. We have made learning an act of joy by our various creative activities like exciting stories, melodious rhymes, thrilling dance, frolicsome actions, sportive games, startling magic and mesmerizing art.
+            </p>
+            <div class="d-flex">
+              <!-- <i
+                class="fa fa-map-marker-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+                style="width: 45px; height: 45px"
+              ></i> -->
+              <div class="pl-3">
+                <!-- <h5>Address</h5> -->
+                <!-- <p>123 Street, New York, USA</p> -->
+              </div>
+            </div>
+            <div class="d-flex">
+              <!-- <i
+                class="fa fa-envelope d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+                style="width: 45px; height: 45px"
+              ></i> -->
+              <div class="pl-3">
+                <!-- <h5>Email</h5> -->
+                <!-- <p>info@example.com</p> -->
+              </div>
+            </div>
+            <div class="d-flex">
+              <!-- <i
+                class="fa fa-phone-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+                style="width: 45px; height: 45px"
+              ></i> -->
+              <div class="pl-3">
+                <!-- <h5>Phone</h5> -->
+                <!-- <p>+012 345 67890</p> -->
+              </div>
+            </div>
+            <div class="d-flex">
+              <!-- <i
+                class="far fa-clock d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+                style="width: 45px; height: 45px"
+              ></i> -->
+              <div class="pl-3">
+                <!-- <h5>Opening Hours</h5>
+                <strong>Sunday - Friday:</strong>
+                <p class="m-0">08:00 AM - 05:00 PM</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    <!-- Contact End -->
+{% endblock %}
